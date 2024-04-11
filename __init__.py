@@ -12,6 +12,18 @@ def hello_world():
 @app.route('/exercices/')  #commentaire23
 def exercices():
     return render_template('exercices.html')
+
+@app.route("/contact/")
+def MaPremiereAPI():
+    return render_template("contact.html")
+
+@app.route('/calcul_carre/<int:val_user>')
+def carre(val_user):
+  res = val_user * val_user
+  if val_user % 2 == 0:
+    return f"<h2>Le carré de votre valeur est : {res}</h2><h3>Nombre pair</h3>"
+  else:
+    return f"<h2>Le carré de votre valeur est : {res}</h2><h3>Nombre impair</h3>"
                                                                                                                
 if __name__ == "__main__":
   app.run(debug=True)
