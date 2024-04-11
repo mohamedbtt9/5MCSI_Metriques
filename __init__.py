@@ -33,9 +33,7 @@ def somme(val1,val2):
   else:
     return f"<h2>Le resulat de la somme de {val1} + {valeur2} est : {resultat}</h2><h3>Nombre impair</h3>"
 
-@app.route("/calcul_somme/")
-def calcul_somme():
-  
+
 
                                                                                                                
 if __name__ == "__main__":
