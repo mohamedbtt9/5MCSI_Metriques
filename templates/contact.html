@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - [Nom de votre entreprise/organisation]</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>[Nom de votre entreprise/organisation]</h1>
+    <h2>Contact</h2>
+  </header>
+  <main>
+    <section class="formulaire">
+      <h3>Formulaire de Contact</h3>
+      <form action="submit.php" method="post">
+        <label for="nom">Nom:</label>
+        <input type="text" id="nom" name="nom" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="sujet">Sujet:</label>
+        <input type="text" id="sujet" name="sujet" required>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+        <button type="submit">Envoyer</button>
+      </form>
+    </section>
+    <section class="coordonnees">
+      <h3>Nos Coordonnées</h3>
+      <ul>
+        <li><strong>Adresse:</strong> [Votre adresse]</li>
+        <li><strong>Téléphone:</strong> [Votre numéro de téléphone]</li>
+        <li><strong>Email:</strong> [Votre adresse email]</li>
+        <li><strong>Réseaux Sociaux:</strong> 
+          <a href="[Lien Facebook]"><img src="images/facebook.png" alt="Facebook"></a>
+          <a href="[Lien Twitter]"><img src="images/twitter.png" alt="Twitter"></a>
+          <a href="[Lien LinkedIn]"><img src="images/linkedin.png" alt="LinkedIn"></a>
+        </li>
+      </ul>
+    </section>
+   
+  </main>
+  <footer>
+    &copy; [Année] - [Nom de votre entreprise/organisation]
+  </footer>
+</body>
+</html>
