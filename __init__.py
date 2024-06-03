@@ -29,9 +29,9 @@ def carre(val_user):
 def somme(val1,val2):
   res = val1 + val2
   if res % 2 == 0:
-    return f"<h2>Le resulat de la somme de {val1} + {valeur2} est : {res}</h2><h3>Nombre pair</h3>"
+    return f"<h2>Le resulat de la somme de {val1} + {valeur2} est : {resultat}</h2><h3>Nombre pair</h3>"
   else:
-    return f"<h2>Le resulat de la somme de {val1} + {valeur2} est : {res}</h2><h3>Nombre impair</h3>"
+    return f"<h2>Le resulat de la somme de {val1} + {valeur2} est : {resultat}</h2><h3>Nombre impair</h3>"
 
 
                                                                                                                
