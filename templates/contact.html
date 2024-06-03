@@ -2,54 +2,32 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Écrivez-nous | [Nom de votre entreprisee/organisation]</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page de Contact</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <img src="images/logo-nature.png" alt="Logo Nature et Évasion">
-    <h1>[Nom de votre entreprise/organisation]</h1>
-   
-  </header>
-  <main>
-    <section class="formulaire-envol">
-      <form action="submit.php" method="post" id="contactForm">
-        <div class="champs">
-          <label for="nom">Votre nom</label>
-          <input type="text" id="nom" name="nom" required>
-          <img src="images/icone-feuille.png" alt="Icône feuille">
-        </div>
-        <div class="champs">
-          <label for="email">Votre email</label>
-          <input type="email" id="email" name="email" required>
-          <img src="images/icone-oiseau.png" alt="Icône oiseau">
-        </div>
-        <div class="champs">
-          <label for="sujet">Sujet de votre message</label>
-          <input type="text" id="sujet" name="sujet" required>
-          <img src="images/icone-montagne.png" alt="Icône montagne">
-        </div>
-        <div class="message">
-          <label for="message">Votre message</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-        </div>
-        <button type="submit" id="submitButton">Envoyer</button>
-      </form>
-      <div id="form-message"></div>
-    </section>
-    <section class="coordonnees-nature">
-      <h3>Nos Coordonnées</h3>
-      <ul>
-        <li><img src="images/icone-fleche.png" alt="Icône flèche"> [Votre adresse]</li>
-        <li><img src="images/icone-telephone.png" alt="Icône téléphone"> [Votre numéro de téléphone]</li>
-        <li><img src="images/icone-email.png" alt="Icône email"> [Votre adresse email]</li>
-        <li><img src="images/icone-reseaux.png" alt="Icône réseaux">
-          <a href="[Lien Facebook]"><img src="images/facebook.png" alt="Facebook"></a>
-          <a href="[Lien Twitter]"><img src="images/twitter.png" alt="Twitter"></a>
-          <a href="[Lien LinkedIn]"><img src="images/linkedin.png" alt="LinkedIn"></a>
-        </li>
+    <div class="contact-form">
+        <h1>Contactez-nous</h1>
+        <form action="#" method="post">
+            <label for="name">Nom</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Adresse e-mail</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="subject">Sujet</label>
+            <input type="text" id="subject" name="subject" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Envoyer</button>
+        </form>
+    </div>
+</body>
+</html>
       </ul>
     </section>
   </main>
