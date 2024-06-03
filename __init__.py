@@ -15,7 +15,7 @@ def exercices():
 
 @app.route("/contact/")
 def MaPremiereAPI():
-    return render_template("contact.html")
+    return "<h2>Ma page de contact</h2>"
 
 @app.route('/calcul_carre/<int:val_user>')
 def carre(val_user):
