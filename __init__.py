@@ -1,39 +1,53 @@
-from flask import Flask
+from flask import Flask, render_template_string, render_template, jsonify
 from flask import render_template
 from flask import json
+from datetime import datetime
+from urllib.request import urlopen
 import sqlite3
                                                                                                                                        
-app = Flask(__name__)    
-
-@app.route("/contact/")
-def MaPremiereAPI():
-    return render_template("contact.html")
+app = Flask(__name__)                                                                                                                  
                                                                                                                                        
 @app.route('/')
 def hello_world():
-    return "<h2>Bonjour tout le monde !!!!!</h2><p>Pour accéder à vos exerices cliquez <a href='./exercices/'>Ici</a></p>"
+    return render_template('hello.html')
 
-@app.route('/exercices/')
-def exercices():
-    return render_template('exercices.html')
+@app.route('/contact')
+def MaPremiereAPI():
+  return render_template("contact.html")
 
-@app.route('/calcul_carre/<int:val_user>')
-def carre(val_user):
-  res1 = val_user * val_user
-  if val_user % 2 == 0:
-    return f"<h2>Le carré de votre valeur est : {res1}</h2><h3>Nombre pair</h3>"
-  else:
-    return f"<h2>Le carré de votre valeur est : {res1}</h2><h3>Nombre impair</h3>"
+@app.route('/tawarano/')
+def meteo():
+    response = urlopen('https://samples.openweathermap.org/data/2.5/forecast?lat=0&lon=0&appid=xxx')
+    raw_content = response.read()
+    json_content = json.loads(raw_content.decode('utf-8'))
+    results = []
+    for list_element in json_content.get('list', []):
+        dt_value = list_element.get('dt')
+        temp_day_value = list_element.get('main', {}).get('temp') - 273.15 # Conversion de Kelvin en °c 
+        results.append({'Jour': dt_value, 'temp': temp_day_value})
+    return jsonify(results=results)
 
-@app.route('/somme/<int:valeur1>/<int:valeur2>')
-def somme(valeur1, valeur2):
-    res = valeur1 + valeur2
-    if res % 2 == 0:
-        return f"<h2>Le résultat de la somme de {valeur1} + {valeur2} est : {res}</h2><h3>Nombre pair</h3>"
-    else:
-        return f"<h2>Le résultat de la somme de {valeur1} + {valeur2} est : {res}</h2><h3>Nombre impair</h3>"
+@app.route("/rapport/")
+def mongraphique():
+    return render_template("graphique.html")
 
+@app.route("/histogramme/")
+def histogramme():
+   return render_template("histogramme.html")
 
-                                                                                                               
+@app.route("/commits/")
+def commits():
+    response = urlopen('https://api.github.com/repos/OpenRSI/5MCSI_Metriques/commits')
+    raw_content = response.read()
+    json_content = json.loads(raw_content.decode('utf-8'))
+    results = []
+    for list_element in json_content.get('commit', []):
+        author = list_element.get('author',{}.get('name'))
+        date = list_element.get('author', {}.get('date'))
+        date_object = datetime.strptime(date, '%Y-%m-%dT%H:%M:%SZ')
+        minutes = date_object.minute
+        results.append({'minutes': minutes, 'nom':author})
+    return jsonify(results=results)
+  
 if __name__ == "__main__":
   app.run(debug=True)
