@@ -29,7 +29,7 @@ Remarque importante : Ce code est à ajouter après la ligne "app = Flask(__name
 <h3>Exercice 3 : Création d'un fichier contact.html</h3>
 <p>Objectif : Savoir créer et placer ses fichiers HTML (&CSS)</p>
 L'exercice consiste à créer un fichier contact.html toujours accèssible depuis la route "/contact/" de votre site et qui n'affichera plus "Ma page de contact" mais une page html beaucoup plus élaborée.
-2 étapes sont nécéssaires pour réaliser cet exercice. Etape 1 : Créer et déposer votre fichier contact.html dans le répertoire **templates**. Etape 2 : Modifier votre route /contact/ comme suit :
+2 étapes sont nécéssaires pour réaliser cet exercice. Etape 1 : Créer et déposer votre fichier contact.html dans le répertoire <b>templates</b>. Etape 2 : Modifier votre route /contact/ comme suit :
 <pre><code><xmp>
 @app.route("/contact/")
 def MaPremiereAPI():
@@ -39,5 +39,40 @@ Remarque importante : Si vous souhaitez utiliser du CSS dans votre fichier.html,
 </p>
 <p>Notion acquises lors de cet exercice : Les Framework imposent un cadre de travail. Ici, le Framwork Flask vous impose de déposer vos fichiers html dans le répertoire "templates" et les fichiers CSS dans le répertoire /static/css/</p>
 <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
+<h3>Exercice 4 : Création d'une fonction de calcul</h3>
+<p>Objectif : Savoir créer des fonctions de calcul en Python</p>
+L'exercice consiste à créer une fonction qui calculera le carré d'une valeur saisi par l'internaute. Cette fonction sera accessible depuis la route "/calcul_carre/" de votre site et nécessitera de saisir une valeur. Exemple : <b>https://{Votre_URL}/calcul_carre/2</b>.
+Voici la route à créer dans votre application Python (__init__.py) :
+<pre><code><xmp>
+@app.route('/calcul_carre/<int:val_user>')
+def carre(val_user):
+    return "<h2>Le carré de votre valeur est : </h2>" + str(val_user * val_user)
+</xmp></code></pre>
+Travail demandé : Sachant que la construction d'une route pour 2 valeurs est la suivante :
+<pre><code><xmp>    
+/somme/<int:valeur1>/<int:valeur2>
+</xmp></code></pre>
+Ecrivez la fonction permettant de faire la somme de 2 valeurs saisie par l'internaute.   
+</p>
+<p>Notion acquises lors de cet exercice : Vous avez appris à créer vos fonctions Python</p>
+<p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
+<h3>Exercice 5 : Pair ou Impaire ?</h3>
+<p>Objectif : Savoir créer des conditions</p>
+Reprenez votre précédent exercice sur les sommes et précisez à l'internaute si la somme de ces deux valeurs est pair ou impaire.   
+</p>
+<p>Notion acquises lors de cet exercice : Vous avez appris à faire des conditions</p>
+<p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
+<h3>Exercice 6 : Somme de toutes les valeurs</h3>
+<p>Objectif : Savoir créer des boucles</p>
+Faites la somme de toutes les valeurs qui seront saisi par l'internaute. Le problème est que vous ne connaissez pas la quantité de valeur saisi par l'internaute. A vous de trouver la solution qui fonctionne.   
+</p>
+<p>Notion acquises lors de cet exercice : Vous avez appris à faire des boucles</p>
+<p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
+<h3>Exercice 7 : La valeur la plus importantes</h3>
+<p>Objectif : Mélanger boucles, conditions et variables</p>
+Trouver la valeur maximale saisie par l'Internaute.   
+</p>
+<p>Notion acquises lors de cet exercice : Vous savez à présent programmer en Flask</p>
+<p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>       
 </body>
 </html>
