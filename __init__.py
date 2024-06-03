@@ -19,7 +19,11 @@ def exercices():
 
 @app.route('/calcul_carre/<int:val_user>')
 def carre(val_user):
-    return f"<h2>Le carré de votre valeur est : {val_user * val_user}</h2>"
+  res = val_user * val_user
+  if val_user % 2 == 0:
+    return f"<h2>Le carré de votre valeur est : {res}</h2><h3>Nombre pair</h3>"
+  else:
+    return f"<h2>Le carré de votre valeur est : {res}</h2><h3>Nombre impair</h3>"
 
 @app.route('/somme/<int:valeur1>/<int:valeur2>')
 def somme(valeur1, valeur2):
