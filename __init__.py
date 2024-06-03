@@ -17,25 +17,6 @@ def hello_world():
 def exercices():
     return render_template('exercices.html')
 
-@app.route("/contact/")
-def MaPremiereAPI():
-    return render_template("contact.html")
-
-@app.route('/calcul_carre/<int:val_user>')
-def carre(val_user):
-  res = val_user * val_user
-  if val_user % 2 == 0:
-    return f"<h2>Le carré de votre valeur est : {res}</h2><h3>Nombre pair</h3>"
-  else:
-    return f"<h2>Le carré de votre valeur est : {res}</h2><h3>Nombre impair</h3>"
-
-@app.route('/somme/<int:valeur1>/<int:valeur2>')
-def somme(val1,val2):
-  res = val1 + val2
-  if res % 2 == 0:
-    return f"<h2>Le resulat de la somme de {val1} + {valeur2} est : {resultat}</h2><h3>Nombre pair</h3>"
-  else:
-    return f"<h2>Le resulat de la somme de {val1} + {valeur2} est : {resultat}</h2><h3>Nombre impair</h3>"
 
 
 
