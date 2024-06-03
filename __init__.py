@@ -17,7 +17,14 @@ def hello_world():
 def exercices():
     return render_template('exercices.html')
 
+@app.route('/calcul_carre/<int:val_user>')
+def carre(val_user):
+    return f"<h2>Le carré de votre valeur est : {val_user * val_user}</h2>"
 
+@app.route('/somme/<int:valeur1>/<int:valeur2>')
+def somme(valeur1, valeur2):
+    result = valeur1 + valeur2
+    return f"<h2>La somme de {valeur1} et {valeur2} est : {result}</h2>"
 
 
                                                                                                                
