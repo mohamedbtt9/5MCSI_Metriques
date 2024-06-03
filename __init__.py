@@ -3,7 +3,11 @@ from flask import render_template
 from flask import json
 import sqlite3
                                                                                                                                        
-app = Flask(__name__)                                                                                                                  
+app = Flask(__name__)    
+
+@app.route("/contact/")
+def MaPremiereAPI():
+    return "<h2>Ma page de contact</h2>"
                                                                                                                                        
 @app.route('/')
 def hello_world():
@@ -15,7 +19,7 @@ def exercices():
 
 @app.route("/contact/")
 def MaPremiereAPI():
-    return "<h2>Ma page de contact</h2>"
+    return render_template("contact.html")
 
 @app.route('/calcul_carre/<int:val_user>')
 def carre(val_user):
